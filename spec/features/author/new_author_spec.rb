@@ -6,6 +6,7 @@ describe "New author page", type: :feature do
     visit new_author_path
   end
   it "should have a text input field for an authors first- and last name and his homepage" do
+    visit new_author_path
     expect(page).to have_field('author[first_name]')
     expect(page).to have_field('author[last_name]')
     expect(page).to have_field('author[homepage]')
