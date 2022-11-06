@@ -1,6 +1,6 @@
 describe "Index Author Page" do
   it "should show all saved Authors" do
-    visit index_author_path
+    visit authors_path
 
     expect(page).to have_text("Name")
     expect(page).to have_text("Homepage")
