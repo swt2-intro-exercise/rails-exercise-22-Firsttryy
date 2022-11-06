@@ -7,4 +7,3 @@ class Author < ApplicationRecord
 
 end
 
-print(Author.new(first_name: "hans", last_name: "franz", homepage: "hh").name)
