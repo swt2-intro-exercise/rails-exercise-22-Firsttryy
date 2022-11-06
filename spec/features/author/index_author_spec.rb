@@ -1,4 +1,6 @@
-describe "Index Author Page" do
+require 'rails_helper'
+
+describe "Index Author Page", type: :feature do
   it "should show all saved Authors" do
     visit authors_path
 

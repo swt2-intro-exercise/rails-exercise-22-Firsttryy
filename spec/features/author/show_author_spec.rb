@@ -1,4 +1,6 @@
-describe "Show Author Page" do
+require 'rails_helper'
+
+describe "Show Author Page", type: :feature do
   it "should show the Authors properties" do
     @alan = FactoryBot.create :author
 
