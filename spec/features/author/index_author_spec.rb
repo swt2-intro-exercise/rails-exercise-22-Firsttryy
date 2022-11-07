@@ -25,7 +25,7 @@ describe "Index Author Page", type: :feature do
 
     expect(page).to have_text("Alan Turing")
     expect(page).to have_text("http://wikipedia.de/Alan_Turing")
-    expect(page).to have_link 'Delete', href: author_path(@alan), turbo_method: :delete, turbo_confirm: "Are you sure?"
+    expect(page).to have_link 'Delete', href: author_path(@alan)
   end
 
 end
