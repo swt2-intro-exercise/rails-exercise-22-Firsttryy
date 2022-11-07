@@ -6,4 +6,6 @@ describe "Edit author page", type: :feature do
     visit edit_author_path(@alan)
   end
 
+  #todo use @alan.reload
+
 end
