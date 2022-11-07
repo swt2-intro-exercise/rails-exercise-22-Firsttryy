@@ -10,4 +10,19 @@ describe "Paper Index Page", type: :model do
     paper = Paper.new(title: "", venue: "Mind 49: 433-460", year: 1950)
     expect(paper).to_not be_valid
   end
+
+  it "should not pass validation with empty venue" do
+    paper = Paper.new(title: "COMPUTING MACHINERY AND INTELLIGENCE", venue: "", year: 1950)
+    expect(paper).to_not be_valid
+    end
+
+  it "should not pass validation with empty year" do
+    paper = Paper.new(title: "COMPUTING MACHINERY AND INTELLIGENCE", venue: "Mind 49: 433-460", year: "")
+    expect(paper).to_not be_valid
+  end
+
+  it "should not pass validation with year as string" do
+    paper = Paper.new(title: "", venue: "Mind 49: 433-460", year: "1950")
+    expect(paper).to_not be_valid
+  end
 end
