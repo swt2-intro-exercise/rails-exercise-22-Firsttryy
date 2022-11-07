@@ -8,7 +8,7 @@
         <%= pluralize(@author.errors.count, "error") %> prohibited this author from being saved:
       </h2>
       <ul>
-        <%= @author.errors.full_messages.each do |msg| %>
+        <% @author.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
