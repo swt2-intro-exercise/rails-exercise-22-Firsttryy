@@ -1,5 +1,6 @@
 class Paper < ApplicationRecord
 
+  scope :year, -> (year) { where(year: year) if year.present?}
   has_and_belongs_to_many :authors
 
   validates :title, presence: true
