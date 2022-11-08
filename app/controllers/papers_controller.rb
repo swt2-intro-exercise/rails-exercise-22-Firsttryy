@@ -45,7 +45,8 @@ class PapersController < ApplicationController
   def destroy
     set_paper
     @paper.destroy
-    redirect_to paper_path, notice: "Paper was successfully destroyed."
+
+    redirect_to authors_path, notice: "Paper was successfully destroyed."
   end
 
   private
