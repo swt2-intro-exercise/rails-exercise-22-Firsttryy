@@ -27,6 +27,8 @@ describe "My Paper Show Page", type: :feature do
     alan = FactoryBot.create :author
     paper = Paper.create(title: "COMPUTING MACHINERY AND INTELLIGENCE", venue: "Mind 49: 433-460", year: 1950, authors: [alan])
     visit paper_path(paper)
-    expect(page).to have_text(alan.name)
+    paper.authors.each do |author|
+      expect(page).to have_text(author.name)
+    end
   end
 end
