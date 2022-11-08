@@ -26,3 +26,26 @@ RSpec.describe "papers/edit", type: :view do
     end
   end
 end
+
+describe "My Paper Edit Page", type: :feature do
+  it "should render without error" do
+    paper = FactoryBot.create :paper
+    visit edit_paper_path(paper)
+  end
+
+  it "should save changes" do
+    paper = FactoryBot.create :paper
+    visit edit_paper_path(paper)
+    fill_in 'paper_title', with: 'COMPUTING MACHINERY AND INTELLIGENCE'
+    fill_in 'paper_venue', with: 'Mind 49: 433-460'
+    fill_in 'paper_year', with: 1950
+    find('input[type="submit"]').click
+  end
+
+  it "should have a multiple select box for authors" do
+    paper = FactoryBot.create :paper
+    visit edit_paper_path(paper)
+    expect(page).to have_select('paper_author_ids', multiple: true)
+    expect(page).to have_css('select[multiple]')
+  end
+end
