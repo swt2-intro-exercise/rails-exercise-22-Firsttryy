@@ -35,4 +35,16 @@ describe "myOwn PaperIndex Tests", type: :feature do
     expect(page).to have_text("1950")
     expect(page).to have_link 'Delete', href: paper_path(@itBook)
   end
+
+  it"should show papers according to filter" do
+    paper1 = FactoryBot.create :paper
+    paper2 = FactoryBot.create :paper
+    paper2.update(year: 1951)
+    visit papers_path(year: 1950)
+    expect(page).to have_text("COMPUTING MACHINERY AND INTELLIGENCE")
+    expect(page).to have_text("Mind 49: 433-460")
+    expect(page).to have_text("1950")
+    expect(page).not_to have_text("1951")
+
+  end
 end
